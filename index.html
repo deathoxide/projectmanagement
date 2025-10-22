@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zacq Project Management – Consultancy</title>
+  <meta name="description" content="Project management consultancy for utilities, infrastructure, and engineering delivery. PMO setup, procurement, risk, and delivery assurance." />
+  <meta property="og:title" content="Project Management Consultancy" />
+  <meta property="og:description" content="Utilities and infrastructure experts. Scope, schedule, cost, quality - delivered." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1020;--panel:#0f172a;--muted:#94a3b8;--text:#e2e8f0;--primary:#22c55e;--accent:#38bdf8;--ring:0 0 0 3px rgba(34,197,94,.35)}
+    :root.light{--bg:#f8fafc;--panel:#ffffff;--muted:#475569;--text:#0f172a;--primary:#16a34a;--accent:#0284c7;--ring:0 0 0 3px rgba(2,132,199,.25)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:rgba(15,23,42,.8);backdrop-filter:saturate(180%) blur(10px);z-index:50;border-bottom:1px solid rgba(148,163,184,.15)}
+    header.light{background:rgba(255,255,255,.8)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--primary));display:grid;place-items:center;color:#0b1020;font-weight:800}
+    .brand h1{font-size:18px;margin:0}
+    .nav a{margin:0 10px;color:var(--text);opacity:.9}
+    .nav a:hover{opacity:1}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#081225;border:0;padding:10px 16px;border-radius:12px;font-weight:600;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(148,163,184,.3);color:var(--text)}
+    .btn:focus{outline:var(--ring)}
+    .hero{padding:80px 0;background:radial-gradient(1200px 400px at 50% -10%,rgba(56,189,248,.18),transparent),radial-gradient(800px 300px at 80% -5%,rgba(34,197,94,.15),transparent)}
+    .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:32px}
+    .hero h2{font-size:40px;line-height:1.1;margin:0 0 12px}
+    .hero p{color:var(--muted);font-size:18px;margin:0 0 20px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .kpi{background:var(--panel);border:1px solid rgba(148,163,184,.15);border-radius:14px;padding:14px}
+    .kpi strong{font-size:22px}
+    .card{background:var(--panel);border:1px solid rgba(148,163,184,.15);border-radius:16px;padding:16px}
+    section{padding:64px 0}
+    h3.section-title{font-size:26px;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    .services{grid-template-columns:repeat(3,1fr)}
+    .projects{grid-template-columns:repeat(3,1fr)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 10px;border-radius:999px;border:1px solid rgba(148,163,184,.25);font-size:13px}
+    .project img{border-radius:12px;border:1px solid rgba(148,163,184,.15)}
+    .project .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .accordion{border-top:1px solid rgba(148,163,184,.15)}
+    .accordion details{border-bottom:1px solid rgba(148,163,184,.15);padding:10px 0}
+    .pricing{grid-template-columns:repeat(3,1fr)}
+    .price{display:flex;align-items:end;gap:6px}
+    .toggle{display:inline-flex;align-items:center;gap:10px}
+    .toggle input{appearance:none;width:46px;height:26px;background:#111827;border-radius:999px;position:relative;outline:0;border:1px solid rgba(148,163,184,.25)}
+    .toggle input:checked{background:#0ea5e9}
+    .toggle input::after{content:"";position:absolute;width:20px;height:20px;top:2.5px;left:3px;border-radius:50%;background:#fff;transition:all .2s}
+    .toggle input:checked::after{left:23px}
+    .contact{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+    footer{padding:36px 0;border-top:1px solid rgba(148,163,184,.15);color:var(--muted)}
+    .badges{display:flex;gap:12px;flex-wrap:wrap}
+    .hidden{display:none}
+    @media(max-width:980px){.hero-grid,.services,.projects,.pricing,.contact{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header id="top">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">PM</div>
+        <h1>Project Management Consultancy</h1>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Case Studies</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="btn ghost" id="themeBtn" aria-label="Toggle theme">Theme</button>
+        <a class="btn" href="#contact">Book a call</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h2>Scope, schedule, cost, quality - delivered.</h2>
+          <p>We help utilities and infrastructure teams ship on time and on budget with clear governance, risk control, and field-ready delivery plans.</p>
+          <div style="display:flex;gap:10px">
+            <a class="btn" href="#projects">See how</a>
+            <a class="btn ghost" href="#services">Explore services</a>
+          </div>
+          <div class="kpis">
+            <div class="kpi"><strong id="kpi1">0</strong><div class="muted">projects delivered</div></div>
+            <div class="kpi"><strong id="kpi2">0</strong><div class="muted">capex managed</div></div>
+            <div class="kpi"><strong id="kpi3">0</strong><div class="muted">on time</div></div>
+          </div>
+        </div>
+        <div class="card" aria-live="polite">
+          <h3 style="margin-top:0">Live health dashboard</h3>
+          <p class="muted" style="margin-top:-4px">Sample project portfolio with RAG status. Click to filter.</p>
+          <div class="chips" id="ragFilters"></div>
+          <div class="grid" style="grid-template-columns:repeat(2,1fr);margin-top:12px" id="ragGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h3 class="section-title">Services</h3>
+        <p class="muted">Pick a lane or engage end to end. All services can be packaged into a delivery assurance sprint.</p>
+        <div class="grid services" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h3 class="section-title">Case studies</h3>
+        <p class="muted">A few recent outcomes. Filter by tag to explore what matters to you.</p>
+        <div class="chips" id="projectFilters"></div>
+        <div class="grid projects" id="projectsGrid"></div>
+        <div class="accordion" id="faqs"></div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <h3 class="section-title" style="margin:0">Pricing</h3>
+          <label class="toggle"><span class="muted">Day rate</span><input type="checkbox" id="priceToggle"><span class="muted">Fixed fee</span></label>
+        </div>
+        <div class="grid pricing" id="pricingGrid"></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container card">
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:16px">
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop" alt="Team collaborating around plans">
+          <div>
+            <h3 style="margin-top:0">About us</h3>
+            <p>We are delivery managers and engineers who have lived on the tools, in the control room, and across the board table. We speak operations, finance, and governance in one sentence.</p>
+            <div class="badges">
+              <span class="chip">PMP</span>
+              <span class="chip">PMBOK 7</span>
+              <span class="chip">ISO 31000</span>
+              <span class="chip">AS 4000</span>
+              <span class="chip">Utilities & substations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h3 class="section-title">Contact</h3>
+        <p class="muted">Tell us about your project. We reply within one business day.</p>
+        <div class="contact">
+          <form class="card" id="contactForm" action="https://formspree.io/f/your-id" method="POST">
+            <label>Full name<br><input name="name" required style="width:100%" class="input"></label>
+            <br>
+            <label>Email<br><input type="email" name="email" required style="width:100%" class="input"></label>
+            <br>
+            <label>What do you need help with?<br>
+              <select name="service" style="width:100%" class="input"></select>
+            </label>
+            <br>
+            <label>Message<br><textarea name="message" rows="5" style="width:100%" class="input" placeholder="Give us scope, timeframes, constraints"></textarea></label>
+            <br>
+            <button class="btn" type="submit">Send</button>
+            <p id="formStatus" class="muted"></p>
+          </form>
+          <div class="card">
+            <h4 style="margin-top:0">Why teams choose us</h4>
+            <ul>
+              <li>Clear owner for every risk and deliverable</li>
+              <li>Field-first planning that respects live network constraints</li>
+              <li>Simple dashboards that execs and crews both use</li>
+            </ul>
+            <div style="height:220px" id="chart"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
+      <div>
+        <div class="brand"><div class="logo">PM</div><strong>Project Management Consultancy</strong></div>
+        <div class="muted">© <span id="year"></span> All rights reserved</div>
+      </div>
+      <div class="badges">
+        <a class="chip" href="#top">Back to top</a>
+        <a class="chip" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a class="chip" href="/privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ------- Data you can edit -------
+    const DATA = {
+      kpis: { projects: 118, capex: "$190M+", ontime: "97%" },
+      services: [
+        { id:'pmo', title:'PMO in a box', icon:'📦', desc:'Rapid PMO setup including governance, stage gates, and reporting.' },
+        { id:'risk', title:'Risk & readiness', icon:'⚠️', desc:'ISO 31000 aligned risk, outage readiness, ITPs and hold points.' },
+        { id:'proc', title:'Procurement', icon:'🧾', desc:'Source, evaluate, and negotiate. AS 4000 and panel call offs.' },
+        { id:'plan', title:'Planning & scheduling', icon:'📅', desc:'Network windows, outage plans, sequence and dependencies.' },
+        { id:'assure', title:'Delivery assurance', icon:'✅', desc:'Independent checks on scope, cost, and quality before GO.' },
+        { id:'report', title:'Dashboards', icon:'📊', desc:'Live RAG dashboards and exec packs that drive action.' }
+      ],
+      rag: [
+        { name:'Rosebery Disconnectors', rag:'Green', owner:'Zinfra' },
+        { name:'Savage River OPGW', rag:'Amber', owner:'Genus' },
+        { name:'Hadspen Relay Upgrades', rag:'Green', owner:'RBD' },
+        { name:'Palmerston Busbar', rag:'Red', owner:'Internal' },
+        { name:'Lindisfarne Earthing', rag:'Amber', owner:'DGA' },
+        { name:'Derwent Bridge Poles', rag:'Green', owner:'Contract' }
+      ],
+      projects: [
+        { title:'Substation disconnector replacement', img:'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop', tags:['utilities','substation','procurement'], summary:'44 kV disconnectors replaced under three outage windows with zero safety incidents and zero rework.', impact:['-16% cost variance','On time','All tests pass'] },
+        { title:'OPGW replacement on west coast', img:'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1200&auto=format&fit=crop', tags:['transmission','opgw','remote'], summary:'Challenging terrain solved with aerial install plans and weather windows.', impact:['Risk burn down 41%','No unplanned outages'] },
+        { title:'Relay protection upgrades', img:'https://images.unsplash.com/photo-1593941707874-ef25b8b4a92f?q=80&w=1200&auto=format&fit=crop', tags:['protection','testing'], summary:'Relay and SCADA upgrades with staged gateway cutovers and dual HMI.', impact:['No customer minutes lost','Clean COAA'] }
+      ],
+      faqs: [
+        { q:'How do we start?', a:'We run a short discovery to agree scope, outcomes, and constraints. Then we propose a sprint plan with owners and dates.' },
+        { q:'Can you work with our contractors?', a:'Yes. We adapt to client or contractor-led delivery and can act as Superintendent or client rep as needed.' },
+        { q:'Do you work remote or on site?', a:'Both. We plan remote where it helps and go on site when it matters.' }
+      ],
+      pricing: [
+        { name:'Essentials', day:1200, fixed: "$6,500 – 2 week sprint", items:['Health check','Risk & readiness','Simple dashboard'] },
+        { name:'Delivery', day:1500, fixed: "$18,000 – 6 week block", items:['Plan & schedule','Contract admin','Reporting'] },
+        { name:'PMO Plus', day:1800, fixed: "$32,000 – 10 week build", items:['Full PMO','Templates & playbooks','Exec packs'] }
+      ]
+    }
+
+    // ------- Theming -------
+    const applyTheme = (theme)=>{
+      const light = theme === 'light'
+      document.documentElement.classList.toggle('light', light)
+      document.querySelector('header').classList.toggle('light', light)
+      localStorage.setItem('theme', theme)
+    }
+    const themeBtn = document.getElementById('themeBtn')
+    themeBtn.addEventListener('click', ()=>{
+      const next = document.documentElement.classList.contains('light') ? 'dark' : 'light'
+      applyTheme(next)
+    })
+    applyTheme(localStorage.getItem('theme')||'dark')
+
+    // ------- KPIs -------
+    const animateCount = (el, target)=>{
+      if(typeof target === 'string'){ el.textContent = target; return }
+      let c=0; const step=Math.ceil(target/40)
+      const t=setInterval(()=>{ c+=step; if(c>=target){c=target; clearInterval(t)} el.textContent=c },20)
+    }
+    animateCount(document.getElementById('kpi1'), DATA.kpis.projects)
+    document.getElementById('kpi2').textContent = DATA.kpis.capex
+    document.getElementById('kpi3').textContent = DATA.kpis.ontime
+
+    // ------- RAG dashboard -------
+    const ragFilters = document.getElementById('ragFilters')
+    const ragGrid = document.getElementById('ragGrid')
+    const ragSet = ['All','Green','Amber','Red']
+    let ragActive='All'
+    const renderRag=()=>{
+      ragGrid.innerHTML=''
+      DATA.rag.filter(r=>ragActive==='All' || r.rag===ragActive).forEach(r=>{
+        const d=document.createElement('div')
+        d.className='card'
+        d.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><strong>${r.name}</strong><span class="chip">${r.rag}</span></div><div class="muted">Owner: ${r.owner}</div>`
+        ragGrid.appendChild(d)
+      })
+    }
+    ragSet.forEach(x=>{
+      const c=document.createElement('button'); c.className='chip'; c.textContent=x
+      c.onclick=()=>{ ragActive=x; renderRag(); document.querySelectorAll('#ragFilters .chip').forEach(b=>b.style.opacity=.6); c.style.opacity=1 }
+      ragFilters.appendChild(c)
+    })
+    renderRag(); ragFilters.firstChild.style.opacity=1
+
+    // ------- Services -------
+    const servicesGrid = document.getElementById('servicesGrid')
+    const serviceSelect = document.querySelector('select[name="service"]')
+    DATA.services.forEach(s=>{
+      const e=document.createElement('div'); e.className='card'
+      e.innerHTML=`<div style="display:flex;gap:10px;align-items:center"><div style="font-size:24px">${s.icon}</div><div><strong>${s.title}</strong><div class="muted">${s.desc}</div></div></div>`
+      servicesGrid.appendChild(e)
+      const opt=document.createElement('option'); opt.value=s.title; opt.textContent=s.title; serviceSelect.appendChild(opt)
+    })
+
+    // ------- Projects with filters -------
+    const allTags = new Set(DATA.projects.flatMap(p=>p.tags))
+    const projectFilters = document.getElementById('projectFilters')
+    const projectsGrid = document.getElementById('projectsGrid')
+    let activeTag='All'
+    const renderProjects=()=>{
+      projectsGrid.innerHTML=''
+      DATA.projects.filter(p=>activeTag==='All'||p.tags.includes(activeTag)).forEach(p=>{
+        const card=document.createElement('div'); card.className='card project'
+        card.innerHTML=`<img src="${p.img}" alt="${p.title}"><h4 style="margin:10px 0 6px">${p.title}</h4><p class="muted">${p.summary}</p><div class="meta">${p.tags.map(t=>`<span class='chip'>${t}</span>`).join('')}</div><ul>${p.impact.map(i=>`<li>${i}</li>`).join('')}</ul>`
+        projectsGrid.appendChild(card)
+      })
+    }
+    ;['All',...allTags].forEach(tag=>{
+      const b=document.createElement('button'); b.className='chip'; b.textContent=tag
+      b.onclick=()=>{ activeTag=tag; renderProjects(); document.querySelectorAll('#projectFilters .chip').forEach(x=>x.style.opacity=.6); b.style.opacity=1 }
+      projectFilters.appendChild(b)
+    })
+    renderProjects(); projectFilters.firstChild.style.opacity=1
+
+    // ------- FAQs -------
+    const faqs=document.getElementById('faqs')
+    DATA.faqs.forEach(f=>{
+      const d=document.createElement('details')
+      d.innerHTML=`<summary><strong>${f.q}</strong></summary><p class="muted">${f.a}</p>`
+      faqs.appendChild(d)
+    })
+
+    // ------- Pricing -------
+    const priceToggle=document.getElementById('priceToggle')
+    const pricingGrid=document.getElementById('pricingGrid')
+    const renderPricing=()=>{
+      pricingGrid.innerHTML=''
+      DATA.pricing.forEach(p=>{
+        const box=document.createElement('div'); box.className='card'
+        const price = priceToggle.checked ? p.fixed : `$${p.day}/day`
+        box.innerHTML=`<h4 style="margin:0 0 10px">${p.name}</h4><div class='price'><strong style='font-size:28px'>${price}</strong></div><ul>${p.items.map(i=>`<li>${i}</li>`).join('')}</ul><button class='btn'>Pick ${p.name}</button>`
+        pricingGrid.appendChild(box)
+      })
+    }
+    priceToggle.addEventListener('change', renderPricing)
+    renderPricing()
+
+    // ------- Tiny chart -------
+    const chart = document.getElementById('chart')
+    const ctx = chart.getContext ? chart.getContext('2d') : null
+    if(ctx){
+      const w = chart.clientWidth, h = chart.clientHeight
+      chart.width=w; chart.height=h
+      const points=[20,42,35,60,58,72,80]
+      ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--accent')
+      ctx.lineWidth=3
+      ctx.beginPath()
+      points.forEach((p,i)=>{
+        const x = i*(w/(points.length-1))
+        const y = h - p/100*h
+        i?ctx.lineTo(x,y):ctx.moveTo(x,y)
+      })
+      ctx.stroke()
+    }
+
+    // ------- Form UX -------
+    const form = document.getElementById('contactForm')
+    const statusEl = document.getElementById('formStatus')
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault()
+      statusEl.textContent='Sending...'
+      try{
+        const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
+        if(res.ok){ form.reset(); statusEl.textContent='Thanks - we will be in touch soon.' }
+        else{ statusEl.textContent='Something went wrong. Email us at hello@example.com' }
+      }catch(err){ statusEl.textContent='Network error. Please email hello@example.com' }
+    })
+
+    // ------- Footer year -------
+    document.getElementById('year').textContent = new Date().getFullYear()
+  </script>
+</body>
+</html>
