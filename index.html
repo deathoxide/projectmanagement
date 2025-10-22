@@ -1,303 +1,285 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zacq Project Management – Consultancy</title>
-  <meta name="description" content="Project management consultancy for utilities, infrastructure, and engineering delivery. PMO setup, procurement, risk, and delivery assurance." />
-  <meta property="og:title" content="Project Management Consultancy" />
-  <meta property="og:description" content="Utilities and infrastructure experts. Scope, schedule, cost, quality - delivered." />
+  <title>Zacq Project Management Consultancy</title>
+  <meta name="description" content="Project management consultancy for utilities and infrastructure. PMO build, risk, procurement, and delivery assurance with real results." />
+  <meta property="og:title" content="Zacq Project Management Consultancy" />
+  <meta property="og:description" content="Utilities and infrastructure experts. Scope, schedule, cost, quality delivered." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0f172a" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230f172a'/><text x='50' y='62' font-size='58' text-anchor='middle' fill='%23a7f3d0' font-family='Arial'>PM</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:'#ecfeff',100:'#cffafe',200:'#a5f3fc',300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490',800:'#155e75',900:'#164e63'
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    :root{--bg:#0b1020;--panel:#0f172a;--muted:#94a3b8;--text:#e2e8f0;--primary:#22c55e;--accent:#38bdf8;--ring:0 0 0 3px rgba(34,197,94,.35)}
-    :root.light{--bg:#f8fafc;--panel:#ffffff;--muted:#475569;--text:#0f172a;--primary:#16a34a;--accent:#0284c7;--ring:0 0 0 3px rgba(2,132,199,.25)}
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    a{color:var(--accent);text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;background:rgba(15,23,42,.8);backdrop-filter:saturate(180%) blur(10px);z-index:50;border-bottom:1px solid rgba(148,163,184,.15)}
-    header.light{background:rgba(255,255,255,.8)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:10px;align-items:center}
-    .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--primary));display:grid;place-items:center;color:#0b1020;font-weight:800}
-    .brand h1{font-size:18px;margin:0}
-    .nav a{margin:0 10px;color:var(--text);opacity:.9}
-    .nav a:hover{opacity:1}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#081225;border:0;padding:10px 16px;border-radius:12px;font-weight:600;cursor:pointer}
-    .btn.ghost{background:transparent;border:1px solid rgba(148,163,184,.3);color:var(--text)}
-    .btn:focus{outline:var(--ring)}
-    .hero{padding:80px 0;background:radial-gradient(1200px 400px at 50% -10%,rgba(56,189,248,.18),transparent),radial-gradient(800px 300px at 80% -5%,rgba(34,197,94,.15),transparent)}
-    .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:32px}
-    .hero h2{font-size:40px;line-height:1.1;margin:0 0 12px}
-    .hero p{color:var(--muted);font-size:18px;margin:0 0 20px}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-    .kpi{background:var(--panel);border:1px solid rgba(148,163,184,.15);border-radius:14px;padding:14px}
-    .kpi strong{font-size:22px}
-    .card{background:var(--panel);border:1px solid rgba(148,163,184,.15);border-radius:16px;padding:16px}
-    section{padding:64px 0}
-    h3.section-title{font-size:26px;margin:0 0 12px}
-    .muted{color:var(--muted)}
-    .grid{display:grid;gap:16px}
-    .services{grid-template-columns:repeat(3,1fr)}
-    .projects{grid-template-columns:repeat(3,1fr)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{padding:6px 10px;border-radius:999px;border:1px solid rgba(148,163,184,.25);font-size:13px}
-    .project img{border-radius:12px;border:1px solid rgba(148,163,184,.15)}
-    .project .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-    .accordion{border-top:1px solid rgba(148,163,184,.15)}
-    .accordion details{border-bottom:1px solid rgba(148,163,184,.15);padding:10px 0}
-    .pricing{grid-template-columns:repeat(3,1fr)}
-    .price{display:flex;align-items:end;gap:6px}
-    .toggle{display:inline-flex;align-items:center;gap:10px}
-    .toggle input{appearance:none;width:46px;height:26px;background:#111827;border-radius:999px;position:relative;outline:0;border:1px solid rgba(148,163,184,.25)}
-    .toggle input:checked{background:#0ea5e9}
-    .toggle input::after{content:"";position:absolute;width:20px;height:20px;top:2.5px;left:3px;border-radius:50%;background:#fff;transition:all .2s}
-    .toggle input:checked::after{left:23px}
-    .contact{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
-    footer{padding:36px 0;border-top:1px solid rgba(148,163,184,.15);color:var(--muted)}
-    .badges{display:flex;gap:12px;flex-wrap:wrap}
-    .hidden{display:none}
-    @media(max-width:980px){.hero-grid,.services,.projects,.pricing,.contact{grid-template-columns:1fr}}
+    .glass { background: rgba(2,6,23,.7); border: 1px solid rgba(148,163,184,.18); box-shadow: 0 10px 30px rgba(2,6,23,.35); }
+    .glass-light { background: rgba(255,255,255,.65); border: 1px solid rgba(15,23,42,.08); box-shadow: 0 10px 30px rgba(15,23,42,.08); }
   </style>
 </head>
-<body>
-  <header id="top">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">PM</div>
-        <h1>Project Management Consultancy</h1>
-      </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#projects">Case Studies</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/70 border-b border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-semibold">
+        <span class="inline-grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-brand-400 to-emerald-400 text-slate-900">PM</span>
+        <span>Zacq Project Management</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#services" class="hover:text-brand-600">Services</a>
+        <a href="#work" class="hover:text-brand-600">Case studies</a>
+        <a href="#process" class="hover:text-brand-600">Process</a>
+        <a href="#pricing" class="hover:text-brand-600">Pricing</a>
+        <a href="#contact" class="hover:text-brand-600">Contact</a>
+        <button id="themeBtn" class="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm border-slate-300 dark:border-slate-700">Theme</button>
+        <a href="#contact" class="inline-flex items-center rounded-lg bg-brand-600 hover:bg-brand-500 text-white px-4 py-2">Book a call</a>
       </nav>
-      <div style="display:flex;gap:10px;align-items:center">
-        <button class="btn ghost" id="themeBtn" aria-label="Toggle theme">Theme</button>
-        <a class="btn" href="#contact">Book a call</a>
-      </div>
+      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center rounded-lg border px-3 py-2 border-slate-300 dark:border-slate-700" aria-label="Open menu">Menu</button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800">
+      <nav class="px-4 py-3 flex flex-col gap-2 text-sm">
+        <a href="#services" class="py-2">Services</a>
+        <a href="#work" class="py-2">Case studies</a>
+        <a href="#process" class="py-2">Process</a>
+        <a href="#pricing" class="py-2">Pricing</a>
+        <a href="#contact" class="py-2">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-50 to-transparent dark:from-slate-900/60"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <h2>Scope, schedule, cost, quality - delivered.</h2>
-          <p>We help utilities and infrastructure teams ship on time and on budget with clear governance, risk control, and field-ready delivery plans.</p>
-          <div style="display:flex;gap:10px">
-            <a class="btn" href="#projects">See how</a>
-            <a class="btn ghost" href="#services">Explore services</a>
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Utilities and infrastructure projects delivered with certainty</h1>
+          <p class="mt-4 text-slate-600 dark:text-slate-300 text-lg">From PMO setup to outage delivery, we align scope, schedule, cost, and quality. Clear governance, fewer surprises, better outcomes.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#work" class="inline-flex items-center rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-5 py-3">See case studies</a>
+            <a href="#services" class="inline-flex items-center rounded-lg border px-5 py-3 border-slate-300 dark:border-slate-700">Explore services</a>
           </div>
-          <div class="kpis">
-            <div class="kpi"><strong id="kpi1">0</strong><div class="muted">projects delivered</div></div>
-            <div class="kpi"><strong id="kpi2">0</strong><div class="muted">capex managed</div></div>
-            <div class="kpi"><strong id="kpi3">0</strong><div class="muted">on time</div></div>
-          </div>
+          <dl class="mt-8 grid grid-cols-3 gap-4">
+            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800"><dt class="text-sm text-slate-500">Projects</dt><dd id="kpi1" class="text-2xl font-bold">118</dd></div>
+            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800"><dt class="text-sm text-slate-500">Capex managed</dt><dd class="text-2xl font-bold">$190M+</dd></div>
+            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800"><dt class="text-sm text-slate-500">On time</dt><dd class="text-2xl font-bold">97%</dd></div>
+          </dl>
         </div>
-        <div class="card" aria-live="polite">
-          <h3 style="margin-top:0">Live health dashboard</h3>
-          <p class="muted" style="margin-top:-4px">Sample project portfolio with RAG status. Click to filter.</p>
-          <div class="chips" id="ragFilters"></div>
-          <div class="grid" style="grid-template-columns:repeat(2,1fr);margin-top:12px" id="ragGrid"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <h3 class="section-title">Services</h3>
-        <p class="muted">Pick a lane or engage end to end. All services can be packaged into a delivery assurance sprint.</p>
-        <div class="grid services" id="servicesGrid"></div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h3 class="section-title">Case studies</h3>
-        <p class="muted">A few recent outcomes. Filter by tag to explore what matters to you.</p>
-        <div class="chips" id="projectFilters"></div>
-        <div class="grid projects" id="projectsGrid"></div>
-        <div class="accordion" id="faqs"></div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-          <h3 class="section-title" style="margin:0">Pricing</h3>
-          <label class="toggle"><span class="muted">Day rate</span><input type="checkbox" id="priceToggle"><span class="muted">Fixed fee</span></label>
-        </div>
-        <div class="grid pricing" id="pricingGrid"></div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container card">
-        <div style="display:grid;grid-template-columns:1fr 2fr;gap:16px">
-          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop" alt="Team collaborating around plans">
-          <div>
-            <h3 style="margin-top:0">About us</h3>
-            <p>We are delivery managers and engineers who have lived on the tools, in the control room, and across the board table. We speak operations, finance, and governance in one sentence.</p>
-            <div class="badges">
-              <span class="chip">PMP</span>
-              <span class="chip">PMBOK 7</span>
-              <span class="chip">ISO 31000</span>
-              <span class="chip">AS 4000</span>
-              <span class="chip">Utilities & substations</span>
-            </div>
+        <div>
+          <div class="glass-light dark:glass rounded-2xl p-6">
+            <h2 class="font-semibold text-lg">Live portfolio status</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Click to filter by RAG. This is demo data that you can edit in-place.</p>
+            <div id="ragFilters" class="mt-3 flex flex-wrap gap-2"></div>
+            <div id="ragGrid" class="mt-4 grid sm:grid-cols-2 gap-3"></div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="contact">
-      <div class="container">
-        <h3 class="section-title">Contact</h3>
-        <p class="muted">Tell us about your project. We reply within one business day.</p>
-        <div class="contact">
-          <form class="card" id="contactForm" action="https://formspree.io/f/your-id" method="POST">
-            <label>Full name<br><input name="name" required style="width:100%" class="input"></label>
-            <br>
-            <label>Email<br><input type="email" name="email" required style="width:100%" class="input"></label>
-            <br>
-            <label>What do you need help with?<br>
-              <select name="service" style="width:100%" class="input"></select>
-            </label>
-            <br>
-            <label>Message<br><textarea name="message" rows="5" style="width:100%" class="input" placeholder="Give us scope, timeframes, constraints"></textarea></label>
-            <br>
-            <button class="btn" type="submit">Send</button>
-            <p id="formStatus" class="muted"></p>
+      <div class="mt-12 opacity-80">
+        <p class="text-xs uppercase tracking-wider text-slate-500">Trusted by teams in power and transport</p>
+        <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+          <div class="h-10 bg-slate-200/60 dark:bg-slate-800/60 rounded"></div>
+          <div class="h-10 bg-slate-200/60 dark:bg-slate-800/60 rounded"></div>
+          <div class="h-10 bg-slate-200/60 dark:bg-slate-800/60 rounded"></div>
+          <div class="h-10 bg-slate-200/60 dark:bg-slate-800/60 rounded"></div>
+          <div class="h-10 bg-slate-200/60 dark:bg-slate-800/60 rounded"></div>
+          <div class="h-10 bg-slate-200/60 dark:bg-slate-800/60 rounded"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold">Services</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Pick a module or engage end to end. We plug into client or contractor delivery models.</p>
+      </div>
+      <div id="servicesGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-bold">Case studies</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Filter by tag to jump to what matters.</p>
+        </div>
+        <div id="projectFilters" class="flex flex-wrap gap-2"></div>
+      </div>
+      <div id="projectsGrid" class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <div class="mt-10 divide-y divide-slate-200 dark:divide-slate-800" id="faqs"></div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">How we work</h2>
+      <ol class="mt-8 grid lg:grid-cols-4 gap-6 list-decimal pl-5">
+        <li class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/40"><h3 class="font-semibold">Discovery</h3><p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Agree scope, outcomes, and constraints. Identify critical windows.</p></li>
+        <li class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/40"><h3 class="font-semibold">Plan</h3><p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Build schedule, risk, ITPs, comms. Align roles and approvals.</p></li>
+        <li class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/40"><h3 class="font-semibold">Deliver</h3><p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Execute with stage gates, field checks, and simple reporting.</p></li>
+        <li class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/40"><h3 class="font-semibold">Assure</h3><p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Independent review and handover. Lessons captured for reuse.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <h2 class="text-3xl font-bold">Pricing</h2>
+        <label class="inline-flex items-center gap-3 text-sm"><span class="text-slate-500">Day rate</span><input type="checkbox" id="priceToggle" class="sr-only"><span id="priceSwitch" class="relative inline-block w-12 h-6 rounded-full bg-slate-300 dark:bg-slate-700"><span id="knob" class="absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white transition"></span></span><span class="text-slate-500">Fixed fee</span></label>
+      </div>
+      <div id="pricingGrid" class="mt-8 grid md:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div class="glass-light dark:glass rounded-2xl p-6">
+          <h2 class="text-2xl font-bold">Tell us about your project</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-300">We reply within one business day.</p>
+          <form id="contactForm" action="https://formspree.io/f/your-id" method="POST" class="mt-4 grid gap-4">
+            <label class="text-sm">Full name<input name="name" required class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/40 px-3 py-2"></label>
+            <label class="text-sm">Email<input type="email" name="email" required class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/40 px-3 py-2"></label>
+            <label class="text-sm">Service<select name="service" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/40 px-3 py-2"></select></label>
+            <label class="text-sm">Message<textarea name="message" rows="5" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/40 px-3 py-2" placeholder="Scope, timeframes, constraints"></textarea></label>
+            <button class="inline-flex items-center rounded-lg bg-brand-600 hover:bg-brand-500 text-white px-5 py-3" type="submit">Send</button>
+            <p id="formStatus" class="text-sm text-slate-600 dark:text-slate-300"></p>
           </form>
-          <div class="card">
-            <h4 style="margin-top:0">Why teams choose us</h4>
-            <ul>
-              <li>Clear owner for every risk and deliverable</li>
-              <li>Field-first planning that respects live network constraints</li>
-              <li>Simple dashboards that execs and crews both use</li>
-            </ul>
-            <div style="height:220px" id="chart"></div>
-          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Why teams choose us</h3>
+          <ul class="mt-3 space-y-2 list-disc pl-5 text-slate-700 dark:text-slate-200">
+            <li>Clear owner for every risk and deliverable</li>
+            <li>Field first planning that respects live network constraints</li>
+            <li>Simple dashboards that execs and crews both use</li>
+          </ul>
+          <canvas id="trendChart" class="mt-6 w-full max-w-lg aspect-[3/1]"></canvas>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
-      <div>
-        <div class="brand"><div class="logo">PM</div><strong>Project Management Consultancy</strong></div>
-        <div class="muted">© <span id="year"></span> All rights reserved</div>
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="inline-grid place-items-center w-8 h-8 rounded-lg bg-gradient-to-br from-brand-400 to-emerald-400 text-slate-900">PM</span>
+        <strong>Zacq Project Management</strong>
       </div>
-      <div class="badges">
-        <a class="chip" href="#top">Back to top</a>
-        <a class="chip" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a class="chip" href="/privacy.html">Privacy</a>
+      <p class="text-sm text-slate-500">© <span id="year"></span> All rights reserved</p>
+      <div class="flex gap-2 text-sm">
+        <a class="underline" href="#">Back to top</a>
+        <a class="underline" href="/privacy.html">Privacy</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // ------- Data you can edit -------
+    // Data
     const DATA = {
-      kpis: { projects: 118, capex: "$190M+", ontime: "97%" },
       services: [
-        { id:'pmo', title:'PMO in a box', icon:'📦', desc:'Rapid PMO setup including governance, stage gates, and reporting.' },
-        { id:'risk', title:'Risk & readiness', icon:'⚠️', desc:'ISO 31000 aligned risk, outage readiness, ITPs and hold points.' },
-        { id:'proc', title:'Procurement', icon:'🧾', desc:'Source, evaluate, and negotiate. AS 4000 and panel call offs.' },
-        { id:'plan', title:'Planning & scheduling', icon:'📅', desc:'Network windows, outage plans, sequence and dependencies.' },
-        { id:'assure', title:'Delivery assurance', icon:'✅', desc:'Independent checks on scope, cost, and quality before GO.' },
+        { id:'pmo', title:'PMO build', icon:'📦', desc:'Governance, stage gates, reporting, and tooling. Set up in weeks.' },
+        { id:'risk', title:'Risk and readiness', icon:'⚠️', desc:'ISO 31000 aligned risk, outage readiness, ITPs and hold points.' },
+        { id:'proc', title:'Procurement', icon:'🧾', desc:'Market scans, RFT support, tender evaluation, and negotiations.' },
+        { id:'plan', title:'Planning and scheduling', icon:'📅', desc:'Network windows, sequence, dependencies, and constraints.' },
+        { id:'assure', title:'Delivery assurance', icon:'✅', desc:'Independent checks on scope, cost, and quality before go.' },
         { id:'report', title:'Dashboards', icon:'📊', desc:'Live RAG dashboards and exec packs that drive action.' }
       ],
       rag: [
-        { name:'Rosebery Disconnectors', rag:'Green', owner:'Zinfra' },
+        { name:'Rosebery disconnectors', rag:'Green', owner:'Zinfra' },
         { name:'Savage River OPGW', rag:'Amber', owner:'Genus' },
-        { name:'Hadspen Relay Upgrades', rag:'Green', owner:'RBD' },
-        { name:'Palmerston Busbar', rag:'Red', owner:'Internal' },
-        { name:'Lindisfarne Earthing', rag:'Amber', owner:'DGA' },
-        { name:'Derwent Bridge Poles', rag:'Green', owner:'Contract' }
+        { name:'Hadspen relay upgrades', rag:'Green', owner:'RBD' },
+        { name:'Palmerston busbar', rag:'Red', owner:'Internal' },
+        { name:'Lindisfarne earthing', rag:'Amber', owner:'DGA' },
+        { name:'Derwent Bridge poles', rag:'Green', owner:'Contract' }
       ],
       projects: [
-        { title:'Substation disconnector replacement', img:'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop', tags:['utilities','substation','procurement'], summary:'44 kV disconnectors replaced under three outage windows with zero safety incidents and zero rework.', impact:['-16% cost variance','On time','All tests pass'] },
-        { title:'OPGW replacement on west coast', img:'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1200&auto=format&fit=crop', tags:['transmission','opgw','remote'], summary:'Challenging terrain solved with aerial install plans and weather windows.', impact:['Risk burn down 41%','No unplanned outages'] },
+        { title:'Substation disconnector replacement', img:'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop', tags:['utilities','substation','procurement'], summary:'44 kV disconnectors replaced under three outage windows with zero safety incidents and zero rework.', impact:['Minus 16 percent cost variance','On time','All tests pass'] },
+        { title:'OPGW replacement on west coast', img:'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1200&auto=format&fit=crop', tags:['transmission','opgw','remote'], summary:'Challenging terrain solved with aerial install plans and weather windows.', impact:['Risk burn down 41 percent','No unplanned outages'] },
         { title:'Relay protection upgrades', img:'https://images.unsplash.com/photo-1593941707874-ef25b8b4a92f?q=80&w=1200&auto=format&fit=crop', tags:['protection','testing'], summary:'Relay and SCADA upgrades with staged gateway cutovers and dual HMI.', impact:['No customer minutes lost','Clean COAA'] }
       ],
       faqs: [
-        { q:'How do we start?', a:'We run a short discovery to agree scope, outcomes, and constraints. Then we propose a sprint plan with owners and dates.' },
-        { q:'Can you work with our contractors?', a:'Yes. We adapt to client or contractor-led delivery and can act as Superintendent or client rep as needed.' },
-        { q:'Do you work remote or on site?', a:'Both. We plan remote where it helps and go on site when it matters.' }
+        { q:'How do we start', a:'We run a short discovery to agree scope, outcomes, and constraints. Then we propose a sprint plan with owners and dates.' },
+        { q:'Can you work with our contractors', a:'Yes. We adapt to client or contractor led delivery and can act as Superintendent or client rep as needed.' },
+        { q:'Do you work remote or on site', a:'Both. We plan remote where it helps and go on site when it matters.' }
       ],
       pricing: [
-        { name:'Essentials', day:1200, fixed: "$6,500 – 2 week sprint", items:['Health check','Risk & readiness','Simple dashboard'] },
-        { name:'Delivery', day:1500, fixed: "$18,000 – 6 week block", items:['Plan & schedule','Contract admin','Reporting'] },
-        { name:'PMO Plus', day:1800, fixed: "$32,000 – 10 week build", items:['Full PMO','Templates & playbooks','Exec packs'] }
+        { name:'Essentials', day:1200, fixed:'$6,500 for a 2 week sprint', items:['Health check','Risk and readiness','Simple dashboard'] },
+        { name:'Delivery', day:1500, fixed:'$18,000 for a 6 week block', items:['Plan and schedule','Contract admin','Reporting'] },
+        { name:'PMO Plus', day:1800, fixed:'$32,000 for a 10 week build', items:['Full PMO','Templates and playbooks','Exec packs'] }
       ]
     }
 
-    // ------- Theming -------
-    const applyTheme = (theme)=>{
-      const light = theme === 'light'
-      document.documentElement.classList.toggle('light', light)
-      document.querySelector('header').classList.toggle('light', light)
-      localStorage.setItem('theme', theme)
-    }
-    const themeBtn = document.getElementById('themeBtn')
-    themeBtn.addEventListener('click', ()=>{
-      const next = document.documentElement.classList.contains('light') ? 'dark' : 'light'
-      applyTheme(next)
+    // Theme
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const themeKey = 'pm-theme'
+    const applyTheme = t => { document.documentElement.classList.toggle('dark', t === 'dark') }
+    applyTheme(localStorage.getItem(themeKey) || (prefersDark ? 'dark' : 'light'))
+    document.getElementById('themeBtn').addEventListener('click', ()=>{
+      const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark'
+      applyTheme(next); localStorage.setItem(themeKey, next)
     })
-    applyTheme(localStorage.getItem('theme')||'dark')
 
-    // ------- KPIs -------
-    const animateCount = (el, target)=>{
-      if(typeof target === 'string'){ el.textContent = target; return }
-      let c=0; const step=Math.ceil(target/40)
-      const t=setInterval(()=>{ c+=step; if(c>=target){c=target; clearInterval(t)} el.textContent=c },20)
-    }
-    animateCount(document.getElementById('kpi1'), DATA.kpis.projects)
-    document.getElementById('kpi2').textContent = DATA.kpis.capex
-    document.getElementById('kpi3').textContent = DATA.kpis.ontime
+    // Mobile menu
+    document.getElementById('mobileMenuBtn').addEventListener('click', ()=>{
+      document.getElementById('mobileMenu').classList.toggle('hidden')
+    })
 
-    // ------- RAG dashboard -------
+    // RAG widget
     const ragFilters = document.getElementById('ragFilters')
     const ragGrid = document.getElementById('ragGrid')
     const ragSet = ['All','Green','Amber','Red']
-    let ragActive='All'
-    const renderRag=()=>{
-      ragGrid.innerHTML=''
-      DATA.rag.filter(r=>ragActive==='All' || r.rag===ragActive).forEach(r=>{
-        const d=document.createElement('div')
-        d.className='card'
-        d.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><strong>${r.name}</strong><span class="chip">${r.rag}</span></div><div class="muted">Owner: ${r.owner}</div>`
-        ragGrid.appendChild(d)
+    let ragActive = 'All'
+    const renderRag = () => {
+      ragGrid.innerHTML = ''
+      DATA.rag.filter(r=>ragActive==='All'||r.rag===ragActive).forEach(r=>{
+        const el = document.createElement('div')
+        el.className = 'rounded-xl border border-slate-200 dark:border-slate-800 p-4'
+        el.innerHTML = `<div class="flex items-center justify-between"><strong>${r.name}</strong><span class="px-2 py-1 rounded-full text-xs ${r.rag==='Green'?'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200':r.rag==='Amber'?'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200':'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-200'}">${r.rag}</span></div><p class="text-sm text-slate-500 mt-1">Owner: ${r.owner}</p>`
+        ragGrid.appendChild(el)
       })
     }
     ragSet.forEach(x=>{
-      const c=document.createElement('button'); c.className='chip'; c.textContent=x
-      c.onclick=()=>{ ragActive=x; renderRag(); document.querySelectorAll('#ragFilters .chip').forEach(b=>b.style.opacity=.6); c.style.opacity=1 }
-      ragFilters.appendChild(c)
+      const b=document.createElement('button'); b.className='px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm'; b.textContent=x
+      b.onclick=()=>{ ragActive=x; renderRag(); [...ragFilters.children].forEach(c=>c.classList.remove('bg-brand-600','text-white')); b.classList.add('bg-brand-600','text-white') }
+      ragFilters.appendChild(b)
     })
-    renderRag(); ragFilters.firstChild.style.opacity=1
+    renderRag(); ragFilters.firstChild.classList.add('bg-brand-600','text-white')
 
-    // ------- Services -------
+    // Services
     const servicesGrid = document.getElementById('servicesGrid')
     const serviceSelect = document.querySelector('select[name="service"]')
     DATA.services.forEach(s=>{
-      const e=document.createElement('div'); e.className='card'
-      e.innerHTML=`<div style="display:flex;gap:10px;align-items:center"><div style="font-size:24px">${s.icon}</div><div><strong>${s.title}</strong><div class="muted">${s.desc}</div></div></div>`
-      servicesGrid.appendChild(e)
-      const opt=document.createElement('option'); opt.value=s.title; opt.textContent=s.title; serviceSelect.appendChild(opt)
+      const card = document.createElement('article')
+      card.className = 'rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-lg transition'
+      card.innerHTML = `<div class="flex items-start gap-3"><span class="text-2xl">${s.icon}</span><div><h3 class="font-semibold">${s.title}</h3><p class="text-sm text-slate-600 dark:text-slate-300 mt-1">${s.desc}</p></div></div>`
+      servicesGrid.appendChild(card)
+      const opt = document.createElement('option'); opt.value = s.title; opt.textContent = s.title; serviceSelect.appendChild(opt)
     })
 
-    // ------- Projects with filters -------
+    // Projects
     const allTags = new Set(DATA.projects.flatMap(p=>p.tags))
     const projectFilters = document.getElementById('projectFilters')
     const projectsGrid = document.getElementById('projectsGrid')
@@ -305,60 +287,56 @@
     const renderProjects=()=>{
       projectsGrid.innerHTML=''
       DATA.projects.filter(p=>activeTag==='All'||p.tags.includes(activeTag)).forEach(p=>{
-        const card=document.createElement('div'); card.className='card project'
-        card.innerHTML=`<img src="${p.img}" alt="${p.title}"><h4 style="margin:10px 0 6px">${p.title}</h4><p class="muted">${p.summary}</p><div class="meta">${p.tags.map(t=>`<span class='chip'>${t}</span>`).join('')}</div><ul>${p.impact.map(i=>`<li>${i}</li>`).join('')}</ul>`
+        const card=document.createElement('article')
+        card.className='rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900'
+        card.innerHTML=`<img alt="${p.title}" src="${p.img}" class="h-40 w-full object-cover"><div class="p-5"><h4 class="font-semibold">${p.title}</h4><p class="mt-1 text-sm text-slate-600 dark:text-slate-300">${p.summary}</p><div class="mt-3 flex flex-wrap gap-2">${p.tags.map(t=>`<span class='px-2 py-1 rounded-full border text-xs border-slate-300 dark:border-slate-700'>${t}</span>`).join('')}</div><ul class="mt-3 text-sm list-disc pl-5">${p.impact.map(i=>`<li>${i}</li>`).join('')}</ul></div>`
         projectsGrid.appendChild(card)
       })
     }
     ;['All',...allTags].forEach(tag=>{
-      const b=document.createElement('button'); b.className='chip'; b.textContent=tag
-      b.onclick=()=>{ activeTag=tag; renderProjects(); document.querySelectorAll('#projectFilters .chip').forEach(x=>x.style.opacity=.6); b.style.opacity=1 }
+      const b=document.createElement('button'); b.className='px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm'; b.textContent=tag
+      b.onclick=()=>{ activeTag=tag; renderProjects(); [...projectFilters.children].forEach(c=>c.classList.remove('bg-slate-900','text-white','dark:bg-white','dark:text-slate-900')); b.classList.add('bg-slate-900','text-white','dark:bg-white','dark:text-slate-900') }
       projectFilters.appendChild(b)
     })
-    renderProjects(); projectFilters.firstChild.style.opacity=1
+    renderProjects(); projectFilters.firstChild.classList.add('bg-slate-900','text-white','dark:bg-white','dark:text-slate-900')
 
-    // ------- FAQs -------
+    // FAQs
     const faqs=document.getElementById('faqs')
     DATA.faqs.forEach(f=>{
       const d=document.createElement('details')
-      d.innerHTML=`<summary><strong>${f.q}</strong></summary><p class="muted">${f.a}</p>`
+      d.className='py-4'
+      d.innerHTML=`<summary class="cursor-pointer font-medium">${f.q}</summary><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">${f.a}</p>`
       faqs.appendChild(d)
     })
 
-    // ------- Pricing -------
+    // Pricing
     const priceToggle=document.getElementById('priceToggle')
     const pricingGrid=document.getElementById('pricingGrid')
+    const priceSwitch=document.getElementById('priceSwitch')
+    const knob=document.getElementById('knob')
     const renderPricing=()=>{
       pricingGrid.innerHTML=''
       DATA.pricing.forEach(p=>{
-        const box=document.createElement('div'); box.className='card'
+        const box=document.createElement('article'); box.className='rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white/70 dark:bg-slate-900/40'
         const price = priceToggle.checked ? p.fixed : `$${p.day}/day`
-        box.innerHTML=`<h4 style="margin:0 0 10px">${p.name}</h4><div class='price'><strong style='font-size:28px'>${price}</strong></div><ul>${p.items.map(i=>`<li>${i}</li>`).join('')}</ul><button class='btn'>Pick ${p.name}</button>`
+        box.innerHTML=`<h4 class='font-semibold'>${p.name}</h4><div class='mt-1 text-3xl font-extrabold'>${price}</div><ul class='mt-3 text-sm list-disc pl-5'>${p.items.map(i=>`<li>${i}</li>`).join('')}</ul><button class='mt-5 inline-flex items-center rounded-lg bg-brand-600 hover:bg-brand-500 text-white px-4 py-2'>Choose ${p.name}</button>`
         pricingGrid.appendChild(box)
       })
     }
-    priceToggle.addEventListener('change', renderPricing)
+    priceSwitch.addEventListener('click',()=>{ priceToggle.checked = !priceToggle.checked; knob.style.left = priceToggle.checked ? '1.5rem' : '0.125rem'; renderPricing() })
     renderPricing()
 
-    // ------- Tiny chart -------
-    const chart = document.getElementById('chart')
-    const ctx = chart.getContext ? chart.getContext('2d') : null
+    // Tiny canvas chart
+    const canvas=document.getElementById('trendChart')
+    const ctx=canvas.getContext?.('2d')
     if(ctx){
-      const w = chart.clientWidth, h = chart.clientHeight
-      chart.width=w; chart.height=h
-      const points=[20,42,35,60,58,72,80]
-      ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--accent')
-      ctx.lineWidth=3
-      ctx.beginPath()
-      points.forEach((p,i)=>{
-        const x = i*(w/(points.length-1))
-        const y = h - p/100*h
-        i?ctx.lineTo(x,y):ctx.moveTo(x,y)
-      })
-      ctx.stroke()
+      const w=canvas.clientWidth, h=canvas.clientHeight; canvas.width=w; canvas.height=h
+      const pts=[20,42,35,60,58,72,80]
+      ctx.lineWidth=3; ctx.strokeStyle = getComputedStyle(document.documentElement).classList.contains('dark') ? '#22d3ee' : '#0891b2'
+      ctx.beginPath(); pts.forEach((p,i)=>{ const x=i*(w/(pts.length-1)); const y=h - p/100*h; i?ctx.lineTo(x,y):ctx.moveTo(x,y) }); ctx.stroke()
     }
 
-    // ------- Form UX -------
+    // Contact form
     const form = document.getElementById('contactForm')
     const statusEl = document.getElementById('formStatus')
     form.addEventListener('submit', async (e)=>{
@@ -366,12 +344,12 @@
       statusEl.textContent='Sending...'
       try{
         const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
-        if(res.ok){ form.reset(); statusEl.textContent='Thanks - we will be in touch soon.' }
+        if(res.ok){ form.reset(); statusEl.textContent='Thanks. We will be in touch soon.' }
         else{ statusEl.textContent='Something went wrong. Email us at hello@example.com' }
       }catch(err){ statusEl.textContent='Network error. Please email hello@example.com' }
     })
 
-    // ------- Footer year -------
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear()
   </script>
 </body>
